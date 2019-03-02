@@ -21,9 +21,10 @@ Explain the entire java life cycle.
 what is class?
 A class is a blue print of object.
 What is object?
-I
+Instance of object.
 What is the entry point of an application?
 Why main is static?
+
 Which class is the superclass of all classes?
 What is difference between path and classpath variables?
 What is the difference between an Interface and Abstract class?
