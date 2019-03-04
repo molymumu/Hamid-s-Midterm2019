@@ -1,10 +1,52 @@
 package math.problems;
-import databases.ConnectToSqlDB;
 
+
+import databases.ConnectToSqlDB;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PrimeNumber {
+
+	public int[] array1 = new int[1000000]; // total # of primes
+
+	void sieveOfEratosthenes(int n) throws Exception {
+
+		boolean prime[] = new boolean[n + 1];
+		int j = 0;
+		ConnectToSqlDB connectDB = new ConnectToSqlDB();
+		List<String> storePattern = new ArrayList<String>();
+		final long startTime = System.currentTimeMillis();
+
+		for (int i = 0; i < n; i++)
+			prime[i] = true;
+
+		for (int p = 2; p * p <= n; p++) {
+
+			if (prime[p] == true) {
+				// Update all multiples of p
+				for (int i = p * 2; i <= n; i += p)
+					prime[i] = false;
+			}
+		}
+
+		for (int i = 2; i <= n; i++) {
+			if (prime[i] == true) {
+				array1 [j] = i;
+				System.out.print(i + " ");
+				j++;
+			}
+		}
+		final long endTime = System.currentTimeMillis();
+		final long executionTime = endTime - startTime;
+		System.out.println("\nTime it takes to calculate prime number from 1,000,000 numbers: "+executionTime+" milliseconds");
+
+		ConnectToSqlDB.insertDataFromArrayToSqlTable(array1, "tbl_Prime_Number", "column_Prime_Number");
+		storePattern = ConnectToSqlDB.readDataBase("tbl_Prime_Number", "column_Prime_Number");
+		System.out.println("Data is being read from the Table (tablePrimeNumber) and displaying to the console");
+		for (String st : storePattern) {
+			System.out.print(st + " ");
+		}
+	}
 
 	public static void main(String[] args) throws Exception {
 		/*
@@ -16,26 +58,12 @@ public class PrimeNumber {
 		 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
 		 *
 		 */
+		int n = 1000000;
 
-		int i = 0;
-		int num = 0;
-		String primeNumber = "";
-		for (i = 0; i <= 10; i++) {
-			int count = 0;
-			for (num = i; num >= 1; num--) {
-				if (i % num == 0) {
-					count = count + 1;
-				}
-			}
-			if (count == 2) {
-				primeNumber = primeNumber + i + " ";
-			}
-		}
-		System.out.println("Prime number 1 to 1000000 are :");
-		System.out.println(primeNumber);
+		System.out.print("Following are the prime numbers ");
+		System.out.println("smaller than or equal to " + n);
 
+		PrimeNumber g = new PrimeNumber();
+		g.sieveOfEratosthenes(n);
 	}
 }
-
-
-
