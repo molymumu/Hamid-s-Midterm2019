@@ -49,7 +49,7 @@ public class ConnectToSqlDB {
             connectToSqlDatabase();
             statement = connect.createStatement();
             resultSet = statement.executeQuery("select * from " + tableName);
-            data = getResultSetData(resultSet, columnName);
+            data = (List<String>) getResultSetData(resultSet, columnName);
         } catch (ClassNotFoundException e) {
             throw e;
         }finally{
@@ -58,7 +58,7 @@ public class ConnectToSqlDB {
         return data;
     }
 
-    private void close() {
+    private static void close() {
         try{
             if(resultSet != null){
                 resultSet.close();
@@ -74,7 +74,7 @@ public class ConnectToSqlDB {
         }
     }
 
-    private List<String> getResultSetData(ResultSet resultSet2, String columnName) throws SQLException {
+    private static List<String> getResultSetData(ResultSet resultSet2, String columnName) throws SQLException {
         List<String> dataList = new ArrayList<String>();
         while(resultSet.next()){
             String itemName = resultSet.getString(columnName);

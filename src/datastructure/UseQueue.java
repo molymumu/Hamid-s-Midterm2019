@@ -13,7 +13,6 @@ public class UseQueue {
 		 * 
 		 */
 
-		//Queue<String> queue=new LinkedList();
 		Queue<String> queue = new LinkedList<>();
 		queue.add("NY");
 		queue.add("DH");
