@@ -24,23 +24,14 @@ public class UseArrayList {
 		arrList.add(50);
 		arrList.add(60);
 
-		//Print Array List
 		System.out.println("Retrieving elements from ArrayList: " + arrList);
-
-
 		System.out.println("Peek first element: " + arrList.get(0));
-
 		System.out.println("Remove element at index 1: " + arrList.remove(1));
-
-
 		System.out.println("Re-retrieving elements from ArrayList: " + arrList);
-
-
 		System.out.println("Use of for-each loop: ");
 		for (Integer in : arrList) {
 			System.out.println(in);
 		}
-
 		System.out.println("Use of iterator using while loop: ");
 		Iterator it = arrList.iterator();
 		while (it.hasNext()) {
@@ -52,14 +43,9 @@ public class UseArrayList {
 		List list = new ArrayList();
 		list = arrList;
 
-
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-
-
 		connectToSqlDB.insertDataFromStringToSqlTable("array_list", "listElement");
 		connectToSqlDB.insertDataFromArrayListToSqlTable(list, "array_list", "listElement");
-
-
 		List<String> numbers = connectToSqlDB.readDataBase("array_list", "listElement");
 
 		for (String st : numbers) {
