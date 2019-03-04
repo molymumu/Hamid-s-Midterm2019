@@ -73,7 +73,7 @@ public class JsonReaderUtil {
 
             }
         }
-        //Print to the console.
+
         for(Employee entry:empList){
             System.out.println(entry.getEmpEmail()+" "+entry.getEmpName()+" "+entry.getSalary()+" "+entry.getDepartment());
         }

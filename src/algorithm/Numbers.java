@@ -22,7 +22,7 @@ public class Numbers {
 
 	public static void main(String[] args) throws Exception {
 		
-		int [] num = new int[100];
+		int [] num = new int[10000];
 		storeRandomNumbers(num);
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 		//Selection Sort
@@ -32,20 +32,18 @@ public class Numbers {
 		System.out.println("Total Execution Time of "+ num.length + " numbers in Selection Sort take: " + selectionSortExecutionTime + " milli sec");
         connectToSqlDB.insertDataFromArrayToSqlTable(num, "selection_sort", "SortingNumbers");
         List<String> numbers = connectToSqlDB.readDataBase("selection_sort", "SortingNumbers");
-        //printValue(numbers);
 		int n = num.length;
 		randomize (num, n);
 		numbers.clear();
 		//Insertion Sort
 		algo.insertionSort(num);
 
-//Insertion Sort
+        //Insertion Sort
 		algo.insertionSort(num);
 		long insertionSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "insertingNumbers");
 		numbers = connectToSqlDB.readDataBase("insertion_sort", "insertingNumbers");
-		//printValue(numbers);
 		n = num.length;
 		randomize (num, n);
 		numbers.clear();
@@ -57,7 +55,6 @@ public class Numbers {
 		System.out.println("Total Execution Time of " + num.length + " numbers in Bubble Sort take: " + bubbleSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "bubble_sort", "bubbleNumbers");
 		numbers = connectToSqlDB.readDataBase("bubble_sort", "bubbleNumbers");
-		//printValue(numbers);
 		n = num.length;
 		randomize (num, n);
 		numbers.clear();
@@ -68,7 +65,6 @@ public class Numbers {
 		System.out.println("Total Execution Time of " + num.length + " numbers in Heap Sort take: " + heapSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "heap_sort", "heapNumbers");
 		numbers = connectToSqlDB.readDataBase("heap_sort", "heapNumbers");
-		//printValue(numbers);
 		n = num.length;
 		randomize (num, n);
 		numbers.clear();
@@ -79,7 +75,6 @@ public class Numbers {
 		System.out.println("Total Execution Time of " + num.length + " numbers in bucket Sort take: " + bucketSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "bucket_sort", "bucketNumbers");
 		numbers = connectToSqlDB.readDataBase("bucket_sort", "bucketNumbers");
-		//printValue(numbers);
 		n = num.length;
 		randomize (num, n);
 		numbers.clear();
@@ -92,18 +87,16 @@ public class Numbers {
 		System.out.println("Total Execution Time of " + num.length + " numbers in Quick Sort take: " + quickSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "quick_sort", "quickNumbers");
 		numbers = connectToSqlDB.readDataBase("quick_sort", "quickNumbers");
-		printValue(numbers);
 		n = num.length;
 		randomize (num, n);
 		numbers.clear();
 
 		//Merge Sort
-		algo.mergeSort(num);
+		algo.merge(num);
 		long mergeSortExecutionTime = algo.executionTime;
 		System.out.println("Total Execution Time of " + num.length + " numbers in merge Sort take: " + mergeSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "merge_sort", "mergeNumbers");
 		numbers = connectToSqlDB.readDataBase("merge_sort", "mergeNumbers");
-		printValue(numbers);
 		n = num.length;
 		randomize (num, n);
 		numbers.clear();
@@ -114,7 +107,6 @@ public class Numbers {
 		System.out.println("Total Execution Time of " + num.length + " numbers in Shell Sort take: " + shellSortExecutionTime + " milli sec");
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "shell_sort", "shellNumbers");
 		numbers = connectToSqlDB.readDataBase("shell_sort", "shellNumbers");
-		printValue(numbers);
 		n = num.length;
 		randomize (num, n);
 		numbers.clear();
@@ -141,17 +133,7 @@ public class Numbers {
 		return high;
 	}
 
-
-
-
-
-
-
-
 		//Come to conclusion about which Sorting Algo is better in given data set.
-
-
-
 	public static void storeRandomNumbers(int [] num){
 		Random rand = new Random();
 		for(int i=0; i<num.length; i++){
