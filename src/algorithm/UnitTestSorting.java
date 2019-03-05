@@ -57,7 +57,7 @@ public class UnitTestSorting {
             ex.printStackTrace();
         }
 
-        sort.quickSort(unSortedArray);
+        //sort.quickSort(unSortedArray);
 
         try {
             Assert.assertEquals(sortedArray, unSortedArray, "Array is not Sorted");
