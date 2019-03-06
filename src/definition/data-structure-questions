@@ -1,11 +1,16 @@
 Please answer the below Data Structure Questions:
 
 why do we need data structure?
-A.a data structure is a data organization, management and storage format .
- The implementation of a data structure usually requires writing a set of procedures that create and manipulate instances of that structure.
+A.We need data structure because it is a particular way of storing and organizing data in a computer so that it can be retrieved and used most productively.
 
 
 What are the various operations that can be performed on different Data Structures?
+A.1.Searching
+  2. Sorting
+  3. Insertion
+  4. Deletion
+  5. Merging
+  6.Traversing
 List out the areas in which data structures are applied extensively?
 what is an Array?
 what is the difference between the Array and ArrayList?
