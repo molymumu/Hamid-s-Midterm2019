@@ -3,7 +3,6 @@ Please answer the below Data Structure Questions:
 why do we need data structure?
 A.We need data structure because it is a particular way of storing and organizing data in a computer so that it can be retrieved and used most productively.
 
-
 What are the various operations that can be performed on different Data Structures?
 A.1.Searching
   2. Sorting
@@ -11,30 +10,127 @@ A.1.Searching
   4. Deletion
   5. Merging
   6.Traversing
+
 List out the areas in which data structures are applied extensively?
+A. 1.Compiler Design,
+   2. Operating System,
+   3. Database Management System,
+   4. Statistical analysis package,
+   5. Numerical Analysis,
+   6. Graphics,
+
 what is an Array?
+An array is a datastructure provided by java to store a fixed collection of elements of the same type.
 what is the difference between the Array and ArrayList?
+ > Array length if fixed but arraylist is dynamic.
+ >Array members are accessed using [], but ArrayList has a set of methods
+   to access elements and modify them as because aerialist is collection of framework in java.
+ >Array can store primitive variables and objects but arraylist can store oly Objects.
+
+
 what is LinkedList?
+A linked list is linear data Structure where each element is a separate object which is called
+node.
 How is an Array different from Linked List?
+A.Arrays are stored in contiguous memory, we can only specify the base address for them and they will be stored contiguously afterwards.
+On the other hand linked list can be stored at our preferred location they need not be stored contiguous.
+
+
 what is queue?
+A.Java Queue is an interface available in java.util package and extends
+java.util.Collection interface. Just like Java List, Java Queue is a collection of
+ordered elements (Or objects) but it performs insert and remove operations differently.
+We can use Queue to store elements before processing those elements.
+
 what is stack?
+A.Java Stack memory is used for execution of a thread. They contain method specific values that are short-lived and references to other objects in the heap that are getting referred from the method. Stack memory is always referenced in LIFO order.
+
 what is FIFO and LIFO?
+A.FIFO is first in first out and LIFO is last in first out .
+
 what is the order of complexity?
+A.Generally, an algorithm has an asymptotic computational complexity.
+ Assuming the input is of size N, we can say that the algorithm will finish at O(N), O(N^2), O(N^3), O(N*log(N)) etc.
+ This means that it is a certain mathematical expression of the size of the input, and the algorithm finishes between two factors of it.
+
 what is the best case to search an element from an array?
+A.If the array is sorted, you can use Binary Search. If it is not, you have to use sequential search.
+
 what is the worst case to search an element from an array?
+A.For an unsorted array, you have to search element by element, until the element is found or array is completely traversed.
+  Element can be at 1st position, the last position or somewhere in between.
+  The worst case arises when the element is at last position or not in the array, therefore we have to traverse the whole array giving n no. of repetitions over loop.
+  Therefore the worst case time complexity is O(n).
+
 what is tree in data structure?
+A.A tree is a nonlinear data structure, compared to arrays, linked lists, stacks and queues which are linear data structures.
+A tree can be empty with no nodes or a tree is a structure consisting of one node called the root and zero or one or more subtrees.
+
 what is graph in data structure?
+A. Graph is a non-linear data structure consisting of nodes and edges.
+The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph.
+
 what is the difference between the HashTable and HashMap?
+A.There are several differences between HashMap and Hashtable in Java:
+Hashtable is synchronized, whereas HashMap is not. This makes HashMap better for non-threaded applications,
+as unsynchronized Objects typically perform better than synchronized ones.
+HashMap allows one null key and any number of null values.
+
 What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
+A.1. RDBMS Array (i.e. Array of structures)
+  2. Network data model Graph
+  3. Hierarchical data model Trees.
+
 How HashMap works in java?
+A. As HashMap also allows null key, so hash code of null will always be 0. hashCode() method is used to get the hash Code of an object.
+ It is possible to provide your own implementation of hashCode(). In HashMap, hashCode() is used to calculate the bucket and therefore calculate the index.
+
 What is ArrayIndexOutOfBoundsException in java? When it occurs?
+A.when we try to access the element in the array out of the size we declared,it will throw the ArrayIndexOutOfBoundsException .
+
 What are the different ways of copying an array into another array?
+A.Array can be copied by iterating over array, and one by one assigning elements.
+We can avoid iteration over elements using clone() or System.arraycopy() clone() creates a new array of same size, but System.arraycopy() can be used to copy from a source range to a destination range.
+
 What is difference between an array and a linked list?
+A. Array:  The size of the array is fixed.
+     Inserting a new element in an array of elements is expensive, because room has to be created for the new elements and to create room existing elements have to shifted.
+     Random access is possible.
+     Stored in contiguous Memory Locations.
+     Memory Should be allocated at Compile-Time.
+
+    LinkedList: Dynamic size
+    Ease of insertion/deletion
+    Random access is not allowed.
+    Extra memory space for a pointer is required with each element of the list.
+    Arrays have better cache locality that can make a pretty big difference in performance.
+    In Linked list memory is allocated at Run-Time.
+
 What is DFS and BFS?
+A.The breadth first search (BFS) and the depth first search (DFS) are the two algorithms used for traversing and searching a node in a graph.
+They can also be used to find out whether a node is reachable from a given node or not.
+
 What is Recursion?
+A.Recursion in computer science is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem.
+The approach can be applied to many types of problems, and recursion is one of the central ideas of computer science
+
 What are linear and non linear data Structures?
+A.In the linear data structure, the data is organized in a linear order in which elements are linked one after the other.Conversely, non-linear data structure involves multiple levels. Examples of the linear data structure are array, queue, stack, linked list.
+
 What is Big-(O)-notation?
+A.Big -(O)- notation is used in Computer Science to describe the performance or complexity of an algorithm.
 Outlined different kind of sorting algorithm with time complexity?
+A.
+Algorithm	Time Complexity:
+                Best             Average	   Worst
+Selection Sort	Ω(n^2)	          θ(n^2)	   O(n^2)
+Bubble Sort    	Ω(n)	          θ(n^2)	   O(n^2)
+Insertion Sort	Ω(n)	          θ(n^2)	   O(n^2)
+Heap Sort	     Ω(n log(n))	θ(n log(n))	   O(n log(n))
+Quick Sort	    Ω(n log(n))	     θ(n log(n))	O(n^2)
+Merge Sort	    Ω(n log(n))	     θ(n log(n))	O(n log(n))
+Bucket Sort   	Ω(n+k)	            θ(n+k)	    O(n^2)
+
 
 Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
   a)In terms of Accessing element.
@@ -42,4 +138,9 @@ Draw a table with time complexity in which it will summarize all the data struct
   c)In terms of Searching element.
   d)In terms of Removing element.
 
-
+A.array: search o(n), access o(1), insert o(n), deletion o(n)
+      arraylist: search o(n), access o(1), insert o(n), deletion o(n)
+      linkedlist: search o(n), access o(1), insert o(1), deletion o(1)
+      stack: search o(n), access o(n), insert o(1), deletion o(1)
+      queue: search o(n), access o(n), insert o(1), deletion o(1)
+      B-Tree: search o(log n), access o(log n), insert o(log n), deletion o(log n)
